@@ -11,6 +11,23 @@ insert into `course`(`cname`) values
 ('math'),
 ('physics'),
 ('chemistry');
+
+
+DROP TABLE IF EXISTS  `student`;
+CREATE TABLE `student` (
+  `sid` int(11) NOT NULL AUTO_INCREMENT,
+  `sname` char(20) NOT NULL,
+  `gender` char(10) DEFAULT NULL,
+  PRIMARY KEY (`sid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+insert into `student`(`sname`,`gender`) values
+('Tom','male'),
+('Jack','male'),
+('Rose','female');
+SET FOREIGN_KEY_CHECKS = 1;
+
+
 DROP TABLE IF EXISTS  `mark`;
 CREATE TABLE `mark` (
   `mid` int(11) NOT NULL AUTO_INCREMENT,
@@ -34,17 +51,3 @@ insert into `mark`(`sid`,`cid`,`score`) values
 ('1','3','95'),
 ('2','3','75'),
 ('3','3','85');
-DROP TABLE IF EXISTS  `student`;
-CREATE TABLE `student` (
-  `sid` int(11) NOT NULL AUTO_INCREMENT,
-  `sname` char(20) NOT NULL,
-  `gender` char(10) DEFAULT NULL,
-  PRIMARY KEY (`sid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-insert into `student`(`sname`,`gender`) values
-('Tom','male'),
-('Jack','male'),
-('Rose','female');
-SET FOREIGN_KEY_CHECKS = 1;
-
